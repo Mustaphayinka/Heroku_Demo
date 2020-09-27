@@ -20,10 +20,12 @@ def predict():
     model = pickle.load(open('model.pkl', 'rb'))
     print(">>>Was able to load model")
     text_query = request.form['textquery']
-    print(">>>Was able to query form")
+    print(">>>Was able to query form", text_query)
     prediction = model.predict([text_query])
+    print('prediction:',prediction)
     prediction_proba = model.predict_proba([text_query])
     probability = np.max(prediction_proba)
+    print('Final command, prob:',probability)
     return render_template('result.html', prediction = prediction, pred = probability)
 
 
