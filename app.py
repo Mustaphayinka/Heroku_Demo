@@ -7,6 +7,8 @@ from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline
 import pickle
 
+from basis import message_clf
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -17,17 +19,13 @@ def index():
 @app.route('/predict', methods = ['POST'])
 def predict():
     print(">>>Got here")
-    model = pickle.load(open('model.pkl', 'rb'))
-    print(">>>Was able to load model")
+    #model = pickle.load(open('model.pkl', 'rb'))
     text_query = request.form['textquery']
-    print(">>>Was able to query form", text_query)
-    print('dir:',dir(model))
-    print('type',type(model))
-    prediction = model.predict(text_query)
-    print('prediction1',prediction)
-    prediction = model.predict([text_query])
+    #prediction = model.predict([text_query])
+    prediction = message_clf.predict([text_query])
     print('prediction:',prediction)
-    prediction_proba = model.predict_proba([text_query])
+    #prediction_proba = model.predict_proba([text_query])
+    prediction_proba = message_clf.predict_proba([text_query])
     probability = np.max(prediction_proba)
     print('Final command, prob:',probability)
     return render_template('result.html', prediction = prediction, pred = probability)
