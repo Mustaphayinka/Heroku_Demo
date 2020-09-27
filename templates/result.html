@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMS Spam Detector App</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='./css/bootstrap.min.css')}}">
+  </head>
+
+  <body>
+      <div class="jumbotron text-center" style="border-radius:0; height:10%;">
+        <div class="container">
+          <h2 class="font-weight-bold"> <span class="text-danger">SMS Spam Detector</span> for Short Messages</h2>
+          <p class="font-italic text-white text-info">A Machine Learning Web Application Built With Flask</p>
+        </div>
+      </div>
+    <br><br>
+
+    <div class="container" style="font-size:2rem;">
+      <p class="text-center text-success">{{"PREDICTION: This Is Not A SPAM Message!" if prediction == 'ham'}}</p>
+      <p class="text-center text-danger">{{"PREDICTION: This Is A SPAM Message!" if prediction == 'spam'}}
+    </div>
+    <br>
+
+    <div class="container text-center">
+      <h3 class="text-info">Probability Value</h3>
+      <p class="text-center">{{pred}}</p>
+    </div>
+      <br> <br>
+    <div class="container text-center">
+      <a href="/" class="btn text-ifnfo" style="border:2px solid">HOME</a>
+    </div>
+
+  </body>
+</html>
