@@ -21,6 +21,8 @@ def predict():
     print(">>>Was able to load model")
     text_query = request.form['textquery']
     print(">>>Was able to query form", text_query)
+    print('dir:',dir(model))
+    print('type',type(model))
     prediction = model.predict([text_query])
     print('prediction:',prediction)
     prediction_proba = model.predict_proba([text_query])
