@@ -3,3 +3,4 @@ gunicorn==19.4.5
 numpy
 scikit-learn
 pandas
+spacy
