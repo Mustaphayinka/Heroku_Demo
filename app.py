@@ -16,8 +16,11 @@ def index():
 
 @app.route('/predict', methods = ['POST'])
 def predict():
+    print(">>>Got here")
     model = pickle.load(open('model.pkl', 'rb'))
+    print(">>>Was able to load model")
     text_query = request.form['textquery']
+    print(">>>Was able to query form")
     prediction = model.predict([text_query])
     prediction_proba = model.predict_proba([text_query])
     probability = np.max(prediction_proba)
