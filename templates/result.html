@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SMS Spam Detector App</title>
     <link rel="stylesheet" href="{{url_for('static', filename='./css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
   </head>
 
   <body>
@@ -14,22 +15,47 @@
           <p class="font-italic text-white text-info">A Machine Learning Web Application Built With Flask</p>
         </div>
       </div>
-    <br><br>
+    <br>
 
-    <div class="container" style="font-size:2rem;">
+    <div class="container" style="font-size:1.5rem;">
       <p class="text-center text-success">{{"PREDICTION: This Is Not A SPAM Message!" if prediction == 'ham'}}</p>
       <p class="text-center text-danger">{{"PREDICTION: This Is A SPAM Message!" if prediction == 'spam'}}
     </div>
-    <br>
 
-    <div class="container text-center">
-      <h3 class="text-info">Probability Value</h3>
-      <p class="text-center">{{pred}}</p>
+    <div class="container text-center" style="font-size:1.5rem;">
+      <h3 class="text-info">Probability Value</h3> <br>
+      <p class="text-center" style="font-size:1rem;">{{pred}}</p>
     </div>
-      <br> <br>
     <div class="container text-center">
-      <a href="/" class="btn text-ifnfo" style="border:2px solid">HOME</a>
+      <a href="/" class="btn text-info" style="border:2px solid">HOME</a>
     </div>
+    <br><br><br>
+    <!-- Footer -->
+  <footer class="page-footer font-small">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a href="https://www.linkedin.com/in/yinka-mustapha-yusuf-1b607419b" class="btn-floating btn-li mx-1" target="_blank">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://github.com/Mustaphayinka" class="btn-floating btn-dribbble mx-1" target="_blank">
+            <i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+  </footer>
+  <!-- Footer -->
+
 
   </body>
 </html>

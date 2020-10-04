@@ -6,6 +6,7 @@
     <title>SMS Spam Detector App</title>
 
     <link rel="stylesheet" href="{{url_for('static', filename='./css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
   </head>
 
   <body>
@@ -23,12 +24,38 @@
           <label>Text</label>
           <textarea name="textquery" spellcheck="True" class="form-control" style="resize:none;" placeholder="Input text here" required='required'></textarea>
         </div>
-        <br><br>
+        <br>
         <div class="form-group">
           <button type="submit" class="btn btn-info" name="button">Predict</button>
         </div>
       </form>
+    </div>
+    <br><br>
+
+    <!-- Footer -->
+  <footer class="page-footer font-small">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a href="https://www.linkedin.com/in/yinka-mustapha-yusuf-1b607419b" class="btn-floating btn-li mx-1" target="_blank">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://github.com/Mustaphayinka" class="btn-floating btn-dribbble mx-1" target="_blank">
+            <i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
 
     </div>
+    <!-- Footer Elements -->
+
+  </footer>
+  <!-- Footer -->
   </body>
 </html>
