@@ -18,20 +18,20 @@ def index():
 
 @app.route('/predict', methods = ['POST'])
 def predict():
-    print(">>>Got here")
+    #print(">>>Got here")
     #model = pickle.load(open('model.pkl', 'rb'))
     text_query = request.form['textquery']
     #prediction = model.predict([text_query])
     prediction = message_clf.predict([text_query])
-    print('prediction:',prediction)
+    #print('prediction:',prediction)
     #prediction_proba = model.predict_proba([text_query])
     prediction_proba = message_clf.predict_proba([text_query])
     probability = np.max(prediction_proba)
-    print('Final command, prob:',probability)
+    #print('Final command, prob:',probability)
     return render_template('result.html', prediction = prediction, pred = probability)
 
 
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run()
